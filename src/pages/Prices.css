@@ -1,0 +1,19 @@
+.float-container {
+  margin: auto;
+  display: "flex";
+  border: 3px solid #fff;
+  padding: 20px;
+}
+
+.float-child {
+  background-color: beige;
+  box-shadow: 5px 10px #e9edfa;
+
+  margin: auto;
+  width: 30%;
+  float: left;
+  padding: 20px;
+  margin-left: 20px;
+  border: 2px solid rgb(0, 153, 255);
+  border-radius: 25px;
+}
