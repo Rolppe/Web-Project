@@ -115,11 +115,11 @@ export async function getSettings(
       "https://price-settings-default-rtdb.europe-west1.firebasedatabase.app/settings.json"
     );
     const data = await response.json();
-    const fetchedPrices = [];
+    const fetchedSettings = [];
 
     // Create object from data
     for (const key in data) {
-      fetchedPrices.push({
+      fetchedSettings.push({
         id: key,
         twoHours: data[key].twoHours,
         threeHours: data[key].threeHours,
@@ -128,11 +128,17 @@ export async function getSettings(
       });
     }
     // If got data, set data states
-    if (fetchedPrices.length > 0) {
-      setTwoHoursProgram(fetchedPrices[fetchedPrices.length - 1].twoHours);
-      setThreeHoursProgram(fetchedPrices[fetchedPrices.length - 1].threeHours);
-      setFourHoursProgram(fetchedPrices[fetchedPrices.length - 1].fourHours);
-      setFiveHoursProgram(fetchedPrices[fetchedPrices.length - 1].fiveHours);
+    if (fetchedSettings.length > 0) {
+      setTwoHoursProgram(fetchedSettings[fetchedSettings.length - 1].twoHours);
+      setThreeHoursProgram(
+        fetchedSettings[fetchedSettings.length - 1].threeHours
+      );
+      setFourHoursProgram(
+        fetchedSettings[fetchedSettings.length - 1].fourHours
+      );
+      setFiveHoursProgram(
+        fetchedSettings[fetchedSettings.length - 1].fiveHours
+      );
     }
     // Inform that data fetching is done
     setSettingsArrived(true);

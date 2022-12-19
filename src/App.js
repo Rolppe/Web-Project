@@ -36,7 +36,7 @@ function App() {
     );
 
     // Fetch price data from server and then set it to useStates
-    fetch("https://ohjelmistoprojekti-production.up.railway.app/pricejson/")
+    fetch("https://ohjelmistoprojekti.up.railway.app/pricejson/")
       .then((result) => {
         return result.json();
       })
